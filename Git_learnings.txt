@@ -108,7 +108,47 @@ ex: To ignore all the files of an IDE starting with '.idea' , create an entry
 I did it for the Dog Project. https://github.com/ashgit1/DogRepo.git
 Cloned --> C:\Users\Ashishkumar\Documents\GitHub\DogRepo
 ========================================================================================
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+========================================================================================
+Git Config Commands:
+========================================================================================
 
+$ git config --global user.name "John Doe"
+
+$ git config --global user.email johndoe@example.com
+
+$ git config user.name
+
+$ git config user.email
+
+You can get the manpage help for the config command by running:
+$ git help config
+
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+========================================================================================
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+========================================================================================
+Fetching a remote:
+========================================================================================
+When working with other people's repositories, there are a few basic Git commands to remember:
+
+git clone:
+----------
+$ git clone https://github.com/USERNAME/REPOSITORY.git
+
+git fetch:
+----------
+$ git fetch remotename
+
+git merge:
+----------
+$ git merge remotename/branchname
+
+git pull:
+---------
+$ git pull remotename branchname
+========================================================================================
 
 
    
