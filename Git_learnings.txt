@@ -66,6 +66,8 @@ Else we need to do rename manually and then do the following:
 Command 'git commit -am "message" ' directly moves the changes to the repository from 
 working area. Use this only for editing comments or similar minor changes.
 Don't use this command if you are performing any delete or insertion operations on file.
+a: to add to staging area.
+m: normal commit.
 ========================================================================================  
 
 6. How to checkout directly from repository:
@@ -150,11 +152,24 @@ git pull:
 $ git pull remotename branchname
 ========================================================================================
 
+Contract the line size by using the 'less' pager:
+--------------------------------------------------
 
-   
-   
-   
-   
+$ less filename
+minus sign (-) + shift + s + return
+
+This will contract a big line into multiple lines with all the text.
+ie. wrap up bigger lines so that it doesn't get truncated when viewed.
+
+========================================================================================
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+========================================================================================
+
+See the difference in color format:
+-----------------------------------
+
+$ git diff --color-words filename
+
    
    
    
