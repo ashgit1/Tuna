@@ -170,18 +170,54 @@ See the difference in color format:
 
 $ git diff --color-words filename
 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+Why do we use '--' while doing chekout ?:
+-----------------------------------------
+
+$ git checkout -- index.html
+It means we are trying to bring index.html from the current branch into the workspace.
+It simply means get changes from current branch. There will be situation where we 
+won't use this and try to checkout from different branch.
+
+$ git checkout 1254adshsj -- index.html
+This will checkout the file from the above commit id(SHA) and directly places in the
+staging area. Without the commit id it places in the working area.
+
+What is HEAD ?
+--------------
+
+HEAD is a pointer which points to the last commit. 
+It can be used to modify the last commits.
+
+Modifying Commits:
+-------------------
+
+We can only modify the last commit.
+We can't modify the commits in between because it violates the security and data integrity.
+Part of git implementation which is in-built. Remember the Snapshop of git commits.(*)
+
+$ git commit --amend -m "Message"
+
+This will commit the changes to the last commit. Though it updates the last commit,
+however the commit id changes(SHA)[Secure Hash] and also the timestamp(obviously).
+
+What does the 'revert' command does ?
+--------------------------------------
+
+It takes commit id as parameter and flips the action of the commit.
+i.e anything that was added will be deleted and vice-versa.
+
+$ git revert 12454asasas
+
+It will ask for updating the commit message in a default editor. If we are happy
+with the message simply close the editor and it will be commited.
+ 
+
+
+
+
+
+
+
+
+
+
