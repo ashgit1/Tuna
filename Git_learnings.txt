@@ -211,13 +211,57 @@ $ git revert 12454asasas
 It will ask for updating the commit message in a default editor. If we are happy
 with the message simply close the editor and it will be commited.
  
+=====================
+	Git Stashing
+=====================
+url : https://git-scm.com/book/en/v1/Git-Tools-Stashing
 
+When you want to switch branches, but you don’t want to commit what you’ve been working on yet; 
+so you’ll stash the changes. To push a new stash onto your stack, run 
+$ git stash
 
+To see which stashes you’ve stored, you can use 
+$ git stash list
 
+You can reapply the one you just stashed by using the command shown in the help output of the original stash command: 
+$ git stash apply. 
 
+If you want to apply one of the older stashes, you can specify it by naming it, like this: 
+$ git stash apply stash@{2}. 
 
+If you don’t specify a stash, Git assumes the most recent stash and tries to apply it.
 
+The apply option only tries to apply the stashed work — you continue to have it on your stack. 
+To remove it, you can run 
+$ git stash drop (with the name of the stash to remove).
 
+You can also run 
+$ git stash pop 
+to apply the stash and then immediately drop it from your stack.
 
+Creating a Branch from a Stash:
+-------------------------------
+You can run 
+$ git stash branch 
+which creates a new branch for you, checks out the commit you were on when you stashed your work, reapplies your work there, and then drops the stash if it applies successfully
 
+ex : $ git stash branch testchanges
+
+======================================
+Some Git issues with their resolution:
+======================================
+
+1. how-to-push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too ?
+This will push all your branches to the remote, and --set-upstream tracking correctly for you.
+$ git push --all -u
+[http://stackoverflow.com/questions/2765421/how-to-push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too]
+
+2. pushing-to-git-returning-error-code-403-fatal-http-request-failed ?
+Github seems only supports ssh way to read&write the repo, although https way also displayed 'Read&Write'.
+So you need to change your repo config on your PC to ssh way:
+edit .git/config file under your repo directory
+find url=entry under section [remote "origin"]
+change it from url=https://MichaelDrogalis@github.com/derekerdmann/lunch_call.git to url=ssh://git@github.com/derekerdmann/lunch_call.git. that is, change all the texts before @ symbol to ssh://git
+Save config file and quit. now you could use git push origin master to sync your repo on GitHub
+[http://stackoverflow.com/questions/7438313/pushing-to-git-returning-error-code-403-fatal-http-request-failed]
 
